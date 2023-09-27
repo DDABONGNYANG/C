@@ -97,4 +97,20 @@ int main(void)
 
 	return 0;
 }
+오류 발생 : unsigned 부분의 대해 더 이해가 필요하다. 
+ %d가 아니라 %c를 써야 헀다. hhd, hhu
+==========================================================
+#include <stdio.h>
 
+ int main(void)
+{
+	int x, y;
+
+	printf("x = %d, y = %d\n", x = (y = 5, y + 10), y);
+
+ 	return 0;
+}
+
+printf("x = %d, y = %d\n", x = (y = 5, y + 10), y);에서
+ y= 5 그 후 y + 10 에서 x = 15로 x 는 15가 된다.
+따라서 결과는 y= 5, x = 15가 된다.
